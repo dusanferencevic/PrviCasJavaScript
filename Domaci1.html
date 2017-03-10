@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Domaci1</title>
+</head>
+<body>
+<script type="text/javascript">
+	
+var userChoice = prompt("Pirpa,Menka,Kazema");
+if (userChoice === "papir") {
+    document.write("<p style='font-size:3em;color:red;'> Izabrao si papir </p>")
+}
+else if (userChoice === "kamen") {
+    document.write("<p style='font-size:3em;color:red;'> Izabrao si kamen </p>")
+}
+else if (userChoice === "makaze") {
+    document.write("<p style='font-size:3em;color:red;'> Izabrao si makaze </p>")
+}
+var computerChoice = Math.random();
+if (computerChoice <= 0.33) {
+    computerChoice = "papir";
+    document.write("<p style='font-size:3em;color:blue;'> Kompjuter je izabrao papir </p>");
+}
+else if (computerChoice <= 0.66) {
+    computerChoice = "kamen";
+    document.write("<p style='font-size:3em;color:blue;'> Kompjuter je izabrao kamen </p>");
+}
+else {
+    computerChoice = "makaze";
+    document.write("<p style='font-size:3em;color:blue;'> Kompjuter je izabrao makaze </p>");
+}
+var poredjenje = function(choice1,choice2) {
+    if (choice1 === choice2) {
+        return "404 error DDOS attack imminent"
+    }    
+     // NERESENO
+    if (choice1 === "papir") {
+        if (choice2 === "makaze") {
+            return "nemas pojma al ozb";
+        }
+    else {
+            return "svaka cast ajmo f5";
+    }
+    }
+    // PAPIR
+    if (choice1 === "kamen") {
+        if (choice2 === "makaze") {
+            return "svaka cast ajmo f5";
+        }
+    else {
+            return "nemas pojma al ozb";
+    }
+    }
+    // makaze
+    if (choice1 === "makaze") {
+        if (choice2 === "kamen") {
+            return "nemas pojma al ozb";
+        }
+    else {
+            return "svaka cast ajmo f5";
+    }
+    }
+};
+ var results = poredjenje(userChoice,computerChoice);
+ document.write("<br><hr><br>" + results);
+</script>
+</body>
+</html>
